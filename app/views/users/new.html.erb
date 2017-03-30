@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :hobby %>
+<%= f.text_field :hobby %><br>
+<h1>             </h1>
+  Dogs:
+  <ul>
+    <%= f.fields_for :dogs do |dog_form| %>
+      <li>
+        <%= dog_form.label :name %>
+        <%= dog_form.text_field :name %><br>
+
+        <%= dog_form.label :cuteness %>
+        <%= dog_form.text_field :iscute %><br>
+      </li>
+    <% end %>
+  </ul>
+  <%= f.submit "make a new person" %>
+<% end %>
